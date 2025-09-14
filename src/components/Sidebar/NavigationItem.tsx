@@ -102,12 +102,12 @@ export const NavigationItem: React.FC<NavigationItemProps> = ({
               key={child.id}
               item={child}
               level={level + 1}
-              isExpanded={false}
-              isActive={false}
+              isExpanded={onToggleExpanded ? false : false}
+              isActive={isActive}
               onToggleExpanded={onToggleExpanded}
               onSetActive={onSetActive}
               breadcrumb={[...breadcrumb, item.title]}
-              maxVisibleLevel={level >= 2 ? level : maxVisibleLevel}
+              maxVisibleLevel={maxVisibleLevel}
             />
           ))}
         </div>
