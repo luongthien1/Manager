@@ -83,7 +83,7 @@ export const NavigationItem: React.FC<NavigationItemProps> = ({
               'text-gray-700 group-hover:text-gray-900': !isActive,
             }
           )}
-            maxVisibleLevel={level >= 2 ? level : maxVisibleLevel}
+        >
           {item.title}
         </span>
       </div>
@@ -107,7 +107,7 @@ export const NavigationItem: React.FC<NavigationItemProps> = ({
               onToggleExpanded={onToggleExpanded}
               onSetActive={onSetActive}
               breadcrumb={[...breadcrumb, item.title]}
-              maxVisibleLevel={maxVisibleLevel}
+              maxVisibleLevel={level >= 2 ? level : maxVisibleLevel}
             />
           ))}
         </div>
